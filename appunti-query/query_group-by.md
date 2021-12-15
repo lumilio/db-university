@@ -1,3 +1,6 @@
+- capire le differenze delle tipologie di esercizio , Join , Group by
+
+
 
 1. Contare quanti iscritti ci sono stati ogni anno 
     ```
