@@ -42,14 +42,30 @@
 
 3. Selezionare tutti i corsi in cui insegna Fulvio Amato (id=44)
     ```
+    SELECT `courses`.*
+    FROM `teachers` 
+    JOIN `course_teacher` ON `teachers`.`id` = `course_teacher`.`teacher_id`
+    JOIN `courses` ON `course_teacher`.`course_id` = `courses`.`id`
+    WHERE `teachers.id` = '44';
     ```
 
 4. Selezionare tutti gli studenti con i dati relativi al corso di laurea a cui sono iscritti e il relativo dipartimento, in ordine alfabetico per cognome e nome
     ```
+    SELECT `students`.`name` as `nome`, `students`.`surname` as `cognome`, `degrees`.`name` , `departments`.`name`
+    FROM `students`
+    JOIN `degrees` ON `students`.`id` = `degrees`.`id` 
+    JOIN `departments` ON `degrees`.`department_id` = `departments`.`id` 
+    ORDER BY `students`.`surname`, `students`.`name`;
     ```
 
 5. Selezionare tutti i corsi di laurea con i relativi corsi e insegnanti
     ```
+    SELECT `degrees`.`name` AS `corso_di_laurea`, `courses`.`name` AS `corso`, `teachers`.`surname` AS `professore`
+    FROM `degrees`
+    JOIN `courses` ON `degrees`.`id` = `courses`.`degree_id` 
+    JOIN `course_teacher` ON `course_teacher`.`course_id` = `courses`.`id`
+    JOIN `teachers` ON `teachers`.`id` = `course_teacher`.`teacher_id`
+    ORDER BY `degrees`.`name`;
     ```
 
 6. Selezionare tutti i docenti che insegnano nel Dipartimento di Matematica (54)
