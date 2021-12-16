@@ -25,13 +25,15 @@
     WHERE `courses`.`id` = 144;
     ```
     
-5. Selezionare a quale dipartimento appartiene il corso di laurea in Diritto dell'Economia 
+5. Selezionare a quale dipartimento appartiene il Corso di Laurea in Diritto dell'Economia 
     ```
-    SELECT 
-    FROM 
-    JOIN 
-    WHERE ;
+    SELECT `departments`.*
+    FROM `departments`
+    JOIN `degrees` ON `departments`.`id`= `degrees`.`department_id`
+    WHERE `degrees`.`name` = 'Corso di Laurea in Diritto dell\'Economia' ;
     ```
+
+
 
 
 
