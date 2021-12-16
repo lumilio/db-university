@@ -25,12 +25,12 @@
     WHERE `courses`.`id` = 144;
     ```
     
-5. Selezionare le informazioni del corso con id=144, con tutti relativi appelli d'esame 
+5. Selezionare a quale dipartimento appartiene il corso di laurea in Diritto dell'Economia 
     ```
-    SELECT `courses`.* , `exams`.`id` , `exams`.`date` , `exams`.`hour`
-    FROM `courses`
-    JOIN `exams` ON `courses`.`id` = `exams` . `course_id`
-    WHERE `courses`.`id` = 144;
+    SELECT 
+    FROM 
+    JOIN 
+    WHERE ;
     ```
 
 
