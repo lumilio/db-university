@@ -2,21 +2,23 @@
 
 
 
-1. Contare quanti iscritti ci sono stati ogni anno 
+1. Selezionare il voto più basso dato ad ogni appello d'esame 
     ```
-    ```
-
-2. Contare gli insegnanti che hanno l'ufficio nello stesso edificio
-    ```
+    SELECT MIN(`vote`) as `lowest_vote`, `exam_id` FROM `exam_student` GROUP BY `exam_id`;
     ```
 
-3. Calcolare la media dei voti di ogni appello d'esame 
+2. Contare gli appelli d'esame del mese di luglio raggruppati per giorno
     ```
+    SELECT COUNT(*) as `exams_number`, DAY(`date`) as `day` FROM `exams` WHERE MONTH(`date`) = 7 GROUP BY `day`;
     ```
 
-4. Contare quanti corsi di laurea ci sono per ogni dipartimento
+
+
+3. Contare 
     ```
-    ```
+    SELECT 
+    
+
 
 
 
